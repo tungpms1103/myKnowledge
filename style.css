@@ -17,6 +17,7 @@ html
     height: 600px;
     display: flex;
     justify-content: center;
+    padding-bottom: 5rem;
 }
 .background img
 {
@@ -31,14 +32,21 @@ body
     background-color: #444654;
 }
 /* CSS item */
+.container
+{
+    width: 100%;
+    padding-bottom: 28rem;
+    display: flex;
+    justify-content: center;
+
+}
 .boxed
 {   
-    width: 100%;
+    width: 98%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--gap_item);
-    padding-bottom: 28rem;
 }
 .boxed .item
 {
@@ -187,4 +195,26 @@ body
 {
     text-align: center;
     padding-bottom: 10rem;
+}
+
+/* Menu  */
+
+.menu
+{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+
+    width: 6rem;
+    height: 6rem;
+
+    border-radius: 50%;
+    background-color: aqua;
+    z-index: 9999;
+
+    background-image: url(./image/menu.jpg);
+    overflow: hidden;
+    background-size: contain;
+
+    box-shadow: 0 0 15px yellow;
 }
