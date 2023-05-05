@@ -1,0 +1,190 @@
+html
+{
+    font-size: 62.5%;
+}
+*,::after,::before
+{
+    margin: 0;
+    padding: 0;
+}
+:root
+{
+    --gap_item: 10px;
+}
+.background
+{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+.background img
+{
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+body
+{
+    background-color: #444654;
+}
+/* CSS item */
+.boxed
+{   
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap_item);
+    padding-bottom: 28rem;
+}
+.boxed .item
+{
+    position: relative;
+    
+    margin-top: 2rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    width: calc(calc(100%/5) - 10px);
+    height: 12rem;
+    /* padding: 2rem; */
+    color: #fff;
+   user-select: none;
+
+}
+.item .content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 12rem;
+    position: relative;
+    transition: all 1s ease;
+    box-shadow: 0 0 10px 0 #fff;
+
+}
+.content .top-content
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease;
+
+}
+.content .top-content h3
+{   
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    font-size: 4rem;
+    text-decoration: solid;
+    font-weight: 800;
+    text-align: center;
+    margin-right: 5rem;
+    
+    border-radius: 25px;
+}
+.top-content h3.nguyenAmDon
+{
+    box-shadow: 0 0 10px yellowgreen,
+    inset 0 0 15px green;
+}
+.top-content h3.nguyenAmDoi
+{
+    box-shadow: 0 0 10px yellowgreen,
+    inset 0 0 15px rgb(151, 140, 13);
+}.top-content h3.phuAm
+{
+    box-shadow: 0 0 10px yellowgreen,
+    inset 0 0 15px rgb(8, 112, 176);
+}
+
+
+.content .top-content .btn_audio
+{
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 150px; */
+    width: 8rem;
+    height: 3.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 red;
+}
+.top-content .btn_audio:active
+{
+    color: rgb(173, 15, 76);
+    box-shadow: inset 0 0 20px rgb(99, 219, 44);
+}
+.item .content .icon_arrow{
+    --h-arrow: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 3rem;
+    height: var(--h-arrow);
+    border-radius: 50%;
+    font-size: 2.5rem;
+    text-align: center;
+
+    overflow: hidden;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 15px 0 green;
+
+    top: calc(100% - var(--h-arrow)/2 );
+}
+.item .content .icon_arrow.active
+{
+    transform: rotate(180deg);
+}
+.item  .content .icon_arrow:active
+{
+    opacity: .8;
+}
+/* Event */
+.boxed .item .content.active 
+{   
+    /* transform: translateY(0) ; */
+    transform-origin: top center;
+    height: 36rem;
+    background-color: #090a09;
+    z-index: 999;
+    box-shadow: 0 0 10px 0 greenyellow;
+}
+.item .content.active .icon_arrow
+{
+    transform: rotate(180deg);
+}
+.item .content.active p
+{
+    display: block;
+}
+.item .content.active .top-content
+{
+    transform: translateY(-1rem);
+}
+/* Hidden */
+.item .content p
+{
+    display: none;
+    font-size: 2rem;
+    text-align: justify;
+    padding: 8px;
+}
+
+/* Video */
+.video_tutorial
+{
+    text-align: center;
+    padding-bottom: 10rem;
+}
