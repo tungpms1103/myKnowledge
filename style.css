@@ -18,6 +18,7 @@ html
     display: flex;
     justify-content: center;
     padding-bottom: 5rem;
+    user-select: none;
 }
 .background img
 {
@@ -30,6 +31,7 @@ html
 body
 {
     background-color: #444654;
+    position: relative;
 }
 /* CSS item */
 .container
@@ -70,7 +72,7 @@ body
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 12rem;
+    height: 100%;
     position: relative;
     transition: all 1s ease;
     box-shadow: 0 0 10px 0 #fff;
@@ -165,7 +167,7 @@ body
     /* transform: translateY(0) ; */
     transform-origin: top center;
     height: 36rem;
-    background-color: #090a09;
+    background-color: #2b2d2b;
     z-index: 999;
     box-shadow: 0 0 10px 0 greenyellow;
 }
@@ -189,14 +191,40 @@ body
     text-align: justify;
     padding: 8px;
 }
+.content p span
+{
+    color: transparent;
+    background: linear-gradient(to bottom, #d5cccc, #b91f07, rgb(195, 200, 203));
 
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: fadeColor 2s infinite ease alternate;
+}   
+@keyframes fadeColor
+{
+    from{
+        filter: hue-rotate(0);
+    }
+    to{
+        filter: hue-rotate(180deg);
+    }
+}
 /* Video */
 .video_tutorial
-{
-    text-align: center;
+{   display: flex;
+    width: 100%;
     padding-bottom: 10rem;
+    justify-content: center;
+    align-items: center;
 }
-
+.video_tutorial video
+{
+    width: 80%;
+    height: 50%;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 20rem;
+}
 /* Menu  */
 
 .menu
@@ -212,9 +240,51 @@ body
     background-color: aqua;
     z-index: 9999;
 
-    background-image: url(./image/menu.jpg);
+    /* background-image: url(./image/menu.jpg); */
     overflow: hidden;
     background-size: contain;
 
     box-shadow: 0 0 15px yellow;
+    transition: all 1.5s ease;
 }
+
+.menu.active
+{
+    width: 40rem;
+    height: 40rem;
+    border-radius: 31% 39% 22% 31% / 22% 25% 28% 24% ;
+    transform-origin: center center;
+    animation: fancyAnimate 1s linear 2 alternate;
+}
+@keyframes fancyAnimate
+{   
+    0%,100%
+    {
+        height: 40rem;
+    }
+    50%
+    {
+        height: 30rem;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .boxed .item
+    {
+        position: relative;
+        
+        margin-top: 1rem;
+        padding: 2rem;
+        flex-grow: 0;
+        flex-shrink: 0;
+    
+        width: 88%;
+        height: 15rem;
+
+        color: #fff;
+       user-select: none;
+    
+    } 
+    
+}   
