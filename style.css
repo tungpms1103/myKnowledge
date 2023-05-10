@@ -1,6 +1,7 @@
 html
 {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 *,::after,::before
 {
@@ -10,6 +11,11 @@ html
 :root
 {
     --gap_item: 10px;
+}
+body
+{
+    background-color: #444654;
+    position: relative;
 }
 .background
 {
@@ -28,11 +34,7 @@ html
 
 }
 
-body
-{
-    background-color: #444654;
-    position: relative;
-}
+
 /* CSS item */
 .container
 {
@@ -227,7 +229,7 @@ body
 }
 /* Menu  */
 
-.menu
+.menu_icon
 {
     position: fixed;
     top: 2rem;
@@ -247,15 +249,83 @@ body
     box-shadow: 0 0 15px yellow;
     transition: all 1.5s ease;
 }
+.menu_icon~.menu
+{
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 40rem;
+    height: 50rem;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    background-color: #fffffff9;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+
+    box-shadow: 0 0 15px 0 rgb(22, 197, 39);
+}
+.menu li
+{   
+    font-size: 3rem;
+    list-style: none;
+    user-select: none;
+}
+.menu li:not(:first-child)
+{
+   color: red;
+   text-transform: capitalize;
+   list-style: square;
+   margin-bottom: 1rem;
+    margin-left: 9rem;
+}
+.menu .close_btn
+{   
+    font-size: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    width: 3.8rem;
+    height: 3.8rem;
+    
+    border-radius: 30px;
+    box-shadow: inset 0 0 15px rgb(15, 164, 28),0 0 15px rgb(0, 255, 38);
+}
+.menu .close_btn:active
+{
+    opacity: .6;
+}
+.menu_icon.active~.black_blur
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #303430a1;
+    z-index: 9998;
+}
 
 .menu.active
 {
-    width: 40rem;
-    height: 40rem;
-    border-radius: 31% 39% 22% 31% / 22% 25% 28% 24% ;
-    transform-origin: center center;
-    animation: fancyAnimate 1s linear 2 alternate;
+    display: flex;
 }
+
+.menu_icon.active
+{
+    
+   
+    transform-origin: center center;
+    /* animation: fancyAnimate 1s linear 2 alternate; */
+}
+
+
 @keyframes fancyAnimate
 {   
     0%,100%
@@ -286,5 +356,25 @@ body
        user-select: none;
     
     } 
-    
+.background
+{
+    height: 300px;
+    padding-bottom: 0;
+}
+.background img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.video_tutorial
+{  
+    padding-bottom: 5rem;
+}
+.video_tutorial video
+{
+    width: 90%;
+    height: 50%;
+}  
+
 }   
